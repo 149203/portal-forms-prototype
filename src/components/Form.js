@@ -34,7 +34,6 @@ class Form extends React.Component {
                         is_optional,
                         is_disabled,
                         choices,
-                        answer,
                         conditional_logic,
                      } = element
 
@@ -140,6 +139,7 @@ class Form extends React.Component {
                            )
                         }
                      }
+                     return <div />
                   })}
                </div>
             </div>
