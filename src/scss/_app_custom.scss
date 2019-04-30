@@ -1,6 +1,13 @@
 $red: rgb(199, 26, 49);
 $blue: rgb(13, 104, 196);
 
-h1 {
-   color: $blue;
+label {
+   margin-bottom: 0.25rem;
+}
+
+p {
+   margin-block-start: 0px;
+   margin-block-end: 0px;
+   margin-inline-start: 0px;
+   margin-inline-end: 0px;
 }
