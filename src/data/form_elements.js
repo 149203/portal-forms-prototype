@@ -231,7 +231,7 @@ const form_elements = [
       is_optional: false,
       is_disabled: false,
       choices: ['Yes', 'No'],
-      answer: 'No',
+      answer: '',
       conditional_logic: {
          question: '',
          answer: '',
