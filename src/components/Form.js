@@ -47,7 +47,7 @@ class Form extends React.Component {
                      ) {
                         if (type === 'heading') {
                            return (
-                              <div className="col-12" key={id}>
+                              <div className="col-12" key={id} id={id}>
                                  <h5>{label}</h5>
                               </div>
                            )
@@ -143,9 +143,51 @@ class Form extends React.Component {
                   })}
                </div>
             </div>
-            <div className="col-4">
+            <div
+               className="col-4"
+               style={{
+                  backgroundColor: 'lightgrey',
+                  height: '100vh',
+               }}
+            >
                <h2>Quote</h2>
+               <h3>$1,234.56</h3>
                <p>This will show an updated total, as well as if denied.</p>
+               <h2 className="mt-5">Skip to section</h2>
+               <div className="row">
+                  {this.state.form_elements.map((element, i, arr) => {
+                     const {
+                        type,
+                        col,
+                        label,
+                        id,
+                        is_optional,
+                        is_disabled,
+                        choices,
+                        conditional_logic,
+                     } = element
+
+                     const dependent_question = _.find(arr, {
+                        id: conditional_logic.question,
+                     })
+
+                     if (
+                        conditional_logic.question === '' ||
+                        dependent_question.answer === conditional_logic.answer
+                     ) {
+                        if (type === 'heading') {
+                           return (
+                              <div className="col-12" key={id}>
+                                 <h5>
+                                    <a href={`#${id}`}>{label}</a>
+                                 </h5>
+                              </div>
+                           )
+                        }
+                     }
+                     return <div />
+                  })}
+               </div>
             </div>
          </div>
       )
