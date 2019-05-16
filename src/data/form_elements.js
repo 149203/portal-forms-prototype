@@ -46,14 +46,21 @@ const form_elements = [
       col: '12',
       label: 'Are you the owner of your own contracting business?',
       id: 'contracting',
-      is_optional: false,
-      is_disabled: false,
       choices: ['Yes', 'No'],
       answer: '',
+      price_adjustment: -25,
       conditional_logic: {
          question: '',
          answer: '',
       },
+      error_validation: ['required'],
+      call_us_validation: [
+         {
+            symbol: '=',
+            answer: 'No',
+         },
+      ],
+      decline_validation: [],
    },
    {
       type: 'heading',
