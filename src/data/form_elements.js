@@ -48,7 +48,10 @@ const form_elements = [
       id: 'contracting',
       choices: ['Yes', 'No'],
       answer: '',
-      price_adjustment: -25,
+      price_adjustment: {
+         operation: '+',
+         value: 34,
+      },
       conditional_logic: {
          question: '',
          answer: '',
